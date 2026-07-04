@@ -3,8 +3,11 @@
   "configurations": [
     {
       "name": "portfolio",
-      "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "3456"],
+      "runtimeExecutable": "bash",
+      "runtimeArgs": [
+        "-c",
+        "cd \"/private/tmp/claude-501/-Users-ekaterinastepanenko-Documents-------------MacBook-Pro--------------2-----------My-web-portfolio-Portfolio-KS/1a3ec840-deb6-404a-bd8c-aa8c64163c3d/scratchpad/site\" && exec python3 -m http.server 3456"
+      ],
       "port": 3456
     }
   ]
