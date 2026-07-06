@@ -16,17 +16,19 @@
   <div class="lightbox" id="lightbox" style="display:none;">
     <button class="lightbox__close" id="lightboxClose">&#x2715;</button>
     <button class="lightbox__arrow lightbox__arrow--prev" id="lightboxPrev">&#8592;</button>
-    <img class="lightbox__img" id="lightboxImg" src="" alt="">
+    <div class="lightbox__stage" id="lightboxStage">
+      <img class="lightbox__img" id="lightboxImg" src="" alt="">
+    </div>
     <button class="lightbox__arrow lightbox__arrow--next" id="lightboxNext">&#8594;</button>
   </div>
 
   <header class="site-header">
-    <img id="headerImg" src="img/header_image.png" alt="" class="site-header__image" width="4958" height="3376">
+    <img id="headerImg" src="img/header_image.webp" alt="" class="site-header__image" width="4958" height="3376">
   </header>
 
   <div class="daynight-toggle" style="display:flex; flex-direction:row; justify-content:center; align-items:center; gap:40px; padding:16px 0 8px;">
-    <img src="img/Day_button_day.png" id="btnDay" alt="Day" class="daynight-btn" style="height:45px; width:auto; cursor:pointer; display:inline-block;">
-    <img src="img/Night_button_day.png" id="btnNight" alt="Night" class="daynight-btn" style="height:45px; width:auto; cursor:pointer; display:inline-block;">
+    <img src="img/Day_button_day.webp" id="btnDay" alt="Day" class="daynight-btn" style="height:45px; width:auto; cursor:pointer; display:inline-block;">
+    <img src="img/Night_button_day.webp" id="btnNight" alt="Night" class="daynight-btn" style="height:45px; width:auto; cursor:pointer; display:inline-block;">
   </div>
 
   <nav class="site-nav">
@@ -38,12 +40,12 @@
   <section class="projects" id="projects">
     <h2 class="projects__title">Projects</h2>
     <div class="projects__grid">
-      <a href="#" class="proj proj--1" data-cover="img/project01_Cover.png"><img id="proj1img" src="img/project1.png" width="1395" height="1056" alt=""></a>
-      <a href="#" class="proj proj--2" data-cover="img/project02_Cover.png"><img id="proj2img" src="img/project2.png" width="950" height="864" alt=""></a>
-      <a href="#" class="proj proj--3" data-cover="img/project03_Cover.png"><img id="proj3img" src="img/project3.png" width="923" height="1334" alt=""></a>
-      <a href="#" class="proj proj--4" data-cover="img/project04_Cover.jpg"><img id="proj4img" src="img/project4.png" width="1527" height="1733" alt=""></a>
-      <a href="#" class="proj proj--5" data-cover="img/project05_Cover.jpg"><img id="proj5img" src="img/project5.png" width="908" height="857" alt=""></a>
-      <a href="#" class="proj proj--6" data-cover="img/project06_Cover.png"><img id="proj6img" src="img/project6.png" width="932" height="938" alt=""></a>
+      <a href="#" class="proj proj--1" data-cover="img/project01_Cover.webp"><img id="proj1img" src="img/project1.webp" width="1395" height="1056" alt=""></a>
+      <a href="#" class="proj proj--2" data-cover="img/project02_Cover.webp"><img id="proj2img" src="img/project2.webp" width="950" height="864" alt=""></a>
+      <a href="#" class="proj proj--3" data-cover="img/project03_Cover.webp"><img id="proj3img" src="img/project3.webp" width="923" height="1334" alt=""></a>
+      <a href="#" class="proj proj--4" data-cover="img/project04_Cover.jpg"><img id="proj4img" src="img/project4.webp" width="1527" height="1733" alt=""></a>
+      <a href="#" class="proj proj--5" data-cover="img/project05_Cover.jpg"><img id="proj5img" src="img/project5.webp" width="908" height="857" alt=""></a>
+      <a href="#" class="proj proj--6" data-cover="img/project06_Cover.webp"><img id="proj6img" src="img/project6.webp" width="932" height="938" alt=""></a>
     </div>
   </section>
 
@@ -51,9 +53,13 @@
     <h2 class="about__title">About the artist</h2>
     <div class="about__inner">
       <div class="about__image-wrap">
-        <img src="img/about_me.png" alt="" class="about__image">
+        <img src="img/about_me.webp" alt="" class="about__image">
       </div>
-      <p class="about__text">Katerina is an artist whose love for stories began in childhood. Growing up with cartoons and worlds like Alice in Wonderland The NeverEnding Story and The Lord of the Rings inspired her to create stories of her own through illustration. After many years working in graphic design she decided to return to what she had always enjoyed most. She works in two different visual styles: clean line art with little or no texture and richly textured illustrations with depth and detail. Moving between these approaches allows her to simplify or enrich the visuals depending on the story she wants to tell. She is available for brand collaborations and custom illustration commissions.</p>
+      <div class="about__text-wrap">
+        <p class="about__text">Katerina is an artist whose love for stories began in childhood. Growing up with cartoons and worlds like The NeverEnding Story, Alice in Wonderland, and The Lord of the Rings inspired her to create worlds of her own through illustration. After many years working in graphic design, she decided to return to what had always inspired her the most.</p>
+        <p class="about__text">She works in two different visual styles: clean line art with little or no texture and richly textured illustrations with depth and detail. Moving between these approaches allows her to combine these two sides of her creativity and make each project personal.</p>
+        <p class="about__text">Katerina is available for brand collaborations and custom illustration commissions.</p>
+      </div>
     </div>
   </section>
 
@@ -73,7 +79,7 @@
         </form>
       </div>
       <div class="collab__img-side">
-        <img id="emailImg" src="img/email_image.png" alt="">
+        <img id="emailImg" src="img/email_image.webp" alt="">
       </div>
     </div>
   </section>
@@ -81,11 +87,11 @@
   <script>
     var galleries = {
       "proj--1": ["img/galilu12.jpg","img/galilu1.jpg","img/galilu2.jpg","img/galilu3.jpg","img/galilu4.jpg","img/galilu5.jpg","img/galilu6.jpg","img/galilu7.jpg","img/galilu8.jpg","img/galilu9.jpg","img/galilu10.jpg","img/galilu11.jpg","img/galilu13.jpg"],
-      "proj--2": ["img/Cider0.jpg","img/Cider01.JPG","img/Cider02.JPG","img/Cider03.JPG","img/Cider04.png"],
-      "proj--3": ["img/Selene01.jpg","img/Selene02.jpg.jpg","img/Selene03.jpg","img/Selene04.png","img/Selene05.png","img/Selene06.png","img/Selene07.jpg"],
-      "proj--4": ["img/project04_Cover.jpg","img/project05_Cover.jpg","img/project04_03.png","img/project04_4.png","img/project04_5.png","img/project04_3.png","img/project04_6.jpg"],
+      "proj--2": ["img/Cider0.jpg","img/Cider01.JPG","img/Cider02.JPG","img/Cider03.JPG","img/Cider04.webp"],
+      "proj--3": ["img/Selene01.jpg","img/Selene02.jpg.jpg","img/Selene03.jpg","img/Selene04.webp","img/Selene05.webp","img/Selene06.webp","img/Selene07.jpg"],
+      "proj--4": ["img/project04_Cover.jpg","img/project05_Cover.jpg","img/project04_03.webp","img/project04_4.webp","img/project04_5.webp","img/project04_3.webp","img/project04_6.jpg"],
       "proj--5": ["img/project05_Cover.jpg","img/project05_Cover_01.jpg"],
-      "proj--6": ["img/1_cards_0.png","img/1_cards_2.jpg","img/1_cards_3.jpg","img/1_cards_4.jpg","img/1_cards_5.jpg","img/1_cards_6.jpg","img/1_cards_8.png","img/1_cards_9.png","img/1_cards_10.png","img/1_cards_11.png","img/1_cards_12.png","img/1_cards_13.jpg"]
+      "proj--6": ["img/1_cards_0.webp","img/1_cards_2.jpg","img/1_cards_3.jpg","img/1_cards_4.jpg","img/1_cards_5.jpg","img/1_cards_6.jpg","img/1_cards_8.webp","img/1_cards_9.webp","img/1_cards_10.webp","img/1_cards_11.webp","img/1_cards_12.webp","img/1_cards_13.jpg"]
     };
 
     var lightbox   = document.getElementById("lightbox");
@@ -104,11 +110,11 @@
     function closeLightbox() { lightbox.style.display = "none"; }
     function showImg(i) { curIdx=(i+curImages.length)%curImages.length; lbImg.src=curImages[curIdx]; }
 
+    var lbStage    = document.getElementById("lightboxStage");
     lbClose.onclick = closeLightbox;
     lbPrev.onclick  = function(){ showImg(curIdx-1); };
     lbNext.onclick  = function(){ showImg(curIdx+1); };
-    lbImg.style.cursor = "pointer";
-    lbImg.onclick = function(e){ e.stopPropagation(); showImg(curIdx+1); };
+    lbStage.onclick = function(e){ e.stopPropagation(); showImg(curIdx+1); };
     lightbox.addEventListener("click", function(e){ if(e.target===lightbox) closeLightbox(); });
     document.addEventListener("keydown", function(e){
       if(lightbox.style.display!=="flex") return;
@@ -135,49 +141,49 @@
     });
 
     var isNight=false;
-    ["img/header_image_night.png","img/project1_night.png","img/project2_night.png","img/project3_night.png","img/project4_night.png","img/project5_night.png","img/project6_night.png","img/email_image_night.png"].forEach(function(s){new Image().src=s;});
+    ["img/header_image_night.webp","img/project1_night.webp","img/project2_night.webp","img/project3_night.webp","img/project4_night.webp","img/project5_night.webp","img/project6_night.webp","img/email_image_night.webp"].forEach(function(s){new Image().src=s;});
 
     document.getElementById("btnDay").onclick=function(){
       if(!isNight)return; isNight=false;
       document.body.style.background="#ffffff"; document.body.classList.remove("night-mode");
-      document.getElementById("headerImg").src="img/header_image.png";
-      document.getElementById("proj1img").src="img/project1.png";
-      document.getElementById("proj2img").src="img/project2.png";
-      document.getElementById("proj3img").src="img/project3.png";
-      document.getElementById("proj4img").src="img/project4.png";
-      document.getElementById("proj5img").src="img/project5.png";
-      document.getElementById("proj6img").src="img/project6.png";
-      document.getElementById("emailImg").src="img/email_image.png";
-      document.getElementById("btnDay").src="img/Day_button_day.png";
-      document.getElementById("btnNight").src="img/Night_button_day.png";
+      document.getElementById("headerImg").src="img/header_image.webp";
+      document.getElementById("proj1img").src="img/project1.webp";
+      document.getElementById("proj2img").src="img/project2.webp";
+      document.getElementById("proj3img").src="img/project3.webp";
+      document.getElementById("proj4img").src="img/project4.webp";
+      document.getElementById("proj5img").src="img/project5.webp";
+      document.getElementById("proj6img").src="img/project6.webp";
+      document.getElementById("emailImg").src="img/email_image.webp";
+      document.getElementById("btnDay").src="img/Day_button_day.webp";
+      document.getElementById("btnNight").src="img/Night_button_day.webp";
     };
     document.getElementById("btnNight").onclick=function(){
       if(isNight)return; isNight=true;
       document.body.style.background="#73C5E3"; document.body.classList.add("night-mode");
-      document.getElementById("headerImg").src="img/header_image_night.png";
-      document.getElementById("proj1img").src="img/project1_night.png";
-      document.getElementById("proj2img").src="img/project2_night.png";
-      document.getElementById("proj3img").src="img/project3_night.png";
-      document.getElementById("proj4img").src="img/project4_night.png";
-      document.getElementById("proj5img").src="img/project5_night.png";
-      document.getElementById("proj6img").src="img/project6_night.png";
-      document.getElementById("emailImg").src="img/email_image_night.png";
-      document.getElementById("btnDay").src="img/Day_button_night.png";
-      document.getElementById("btnNight").src="img/Night_button_night.png";
+      document.getElementById("headerImg").src="img/header_image_night.webp";
+      document.getElementById("proj1img").src="img/project1_night.webp";
+      document.getElementById("proj2img").src="img/project2_night.webp";
+      document.getElementById("proj3img").src="img/project3_night.webp";
+      document.getElementById("proj4img").src="img/project4_night.webp";
+      document.getElementById("proj5img").src="img/project5_night.webp";
+      document.getElementById("proj6img").src="img/project6_night.webp";
+      document.getElementById("emailImg").src="img/email_image_night.webp";
+      document.getElementById("btnDay").src="img/Day_button_night.webp";
+      document.getElementById("btnNight").src="img/Night_button_night.webp";
     };
 
     function alignAboutText() {
       if (window.matchMedia("(max-width: 700px)").matches) return;
       var title = document.querySelector(".about__title");
-      var text = document.querySelector(".about__text");
-      if (!title || !text) return;
-      text.style.marginLeft = "0px";
+      var wrap = document.querySelector(".about__text-wrap");
+      if (!title || !wrap) return;
+      wrap.style.marginLeft = "0px";
       var range = document.createRange();
       range.selectNodeContents(title);
       var titleLeft = range.getBoundingClientRect().left;
-      var textLeft = text.getBoundingClientRect().left;
-      var delta = titleLeft - textLeft;
-      text.style.marginLeft = delta + "px";
+      var wrapLeft = wrap.getBoundingClientRect().left;
+      var delta = titleLeft - wrapLeft;
+      wrap.style.marginLeft = delta + "px";
     }
     window.addEventListener("load", alignAboutText);
     window.addEventListener("resize", alignAboutText);
