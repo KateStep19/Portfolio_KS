@@ -163,6 +163,22 @@
       document.getElementById("btnDay").src="img/Day_button_night.png";
       document.getElementById("btnNight").src="img/Night_button_night.png";
     };
+
+    function alignAboutText() {
+      if (window.matchMedia("(max-width: 700px)").matches) return;
+      var title = document.querySelector(".about__title");
+      var text = document.querySelector(".about__text");
+      if (!title || !text) return;
+      text.style.marginLeft = "0px";
+      var range = document.createRange();
+      range.selectNodeContents(title);
+      var titleLeft = range.getBoundingClientRect().left;
+      var textLeft = text.getBoundingClientRect().left;
+      var delta = titleLeft - textLeft;
+      text.style.marginLeft = delta + "px";
+    }
+    window.addEventListener("load", alignAboutText);
+    window.addEventListener("resize", alignAboutText);
   </script>
 </body>
 </html>
