@@ -69,6 +69,8 @@ img { display:block; max-width:100%; }
 body.night-mode .collab__input::placeholder,body.night-mode .collab__textarea::placeholder { color:#A0F8FF; }
 .collab__btn { font-family:'Montserrat',sans-serif; font-size:15px; font-weight:500; letter-spacing:0.08em; background:transparent; border:none; padding:12px 40px; cursor:pointer; color:#000; align-self:center; margin-top:10px; }
 .collab__btn:hover { opacity:0.6; }
+.collab__btn:disabled { opacity:0.4; cursor:default; }
+.collab__status { font-family:'Montserrat',sans-serif; font-size:13px; color:#000; text-align:center; margin-top:14px; }
 
 
 /* ======= MOBILE ======= */

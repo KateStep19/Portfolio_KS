@@ -68,14 +68,15 @@
     <div class="collab__inner">
       <div class="collab__form-side">
         <p class="collab__text">Interested in working together? Leave your email and I will get back to you.</p>
-        <form class="collab__form" onsubmit="return false;">
+        <form class="collab__form" id="collabForm" action="https://formspree.io/f/xrewdbnv" method="POST">
           <div class="collab__row">
-            <input class="collab__input" type="email" placeholder="your@email.com">
+            <input class="collab__input" type="email" name="email" placeholder="your@email.com" required>
           </div>
           <div class="collab__row">
-            <textarea class="collab__input collab__textarea" placeholder="Subject" rows="4"></textarea>
+            <textarea class="collab__input collab__textarea" name="message" placeholder="Subject" rows="4" required></textarea>
           </div>
           <button class="collab__btn" type="submit">Send</button>
+          <p class="collab__status" id="collabStatus" style="display:none;"></p>
         </form>
       </div>
       <div class="collab__img-side">
@@ -187,6 +188,32 @@
     }
     window.addEventListener("load", alignAboutText);
     window.addEventListener("resize", alignAboutText);
+
+    var collabForm = document.getElementById("collabForm");
+    var collabStatus = document.getElementById("collabStatus");
+    collabForm.addEventListener("submit", function(e){
+      e.preventDefault();
+      var btn = collabForm.querySelector(".collab__btn");
+      btn.disabled = true;
+      collabStatus.style.display = "block";
+      collabStatus.textContent = "Sending...";
+      fetch(collabForm.action, {
+        method: "POST",
+        body: new FormData(collabForm),
+        headers: { "Accept": "application/json" }
+      }).then(function(res){
+        if (res.ok) {
+          collabStatus.textContent = "Thank you! Your message has been sent.";
+          collabForm.reset();
+        } else {
+          collabStatus.textContent = "Something went wrong. Please try again or email me directly.";
+        }
+      }).catch(function(){
+        collabStatus.textContent = "Something went wrong. Please try again or email me directly.";
+      }).finally(function(){
+        btn.disabled = false;
+      });
+    });
   </script>
 </body>
 </html>
