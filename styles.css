@@ -65,3 +65,45 @@ img { display:block; max-width:100%; }
 .collab__input::placeholder,.collab__textarea::placeholder { color:#aaa; }
 .collab__btn { font-family:'Montserrat',sans-serif; font-size:13px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; background:transparent; border:1.5px solid #000; padding:12px 40px; cursor:pointer; color:#000; align-self:center; margin-top:10px; }
 .collab__btn:hover { background:#000; color:#fff; }
+
+
+/* ======= MOBILE ======= */
+@media (max-width: 700px) {
+  /* no hover on touch screens: never show the cursor-following cover */
+  #cursor-cover { display:none !important; }
+
+  .daynight-toggle { gap:20px !important; padding:10px 0 4px !important; }
+  .daynight-btn { height:36px !important; }
+  /* nav: horizontal bar on top */
+  .site-nav { left:0; right:0; top:0; transform:none; flex-direction:row; justify-content:center; gap:22px; padding:14px 10px; background:rgba(255,255,255,0.92); -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px); }
+  body.night-mode .site-nav { background:rgba(115,197,227,0.92); }
+  .site-nav__link { font-size:13px; }
+
+  /* section titles */
+  .projects__title, .about__title, .collab__title { font-size:34px; }
+
+  /* projects: single column instead of absolute grid */
+  .projects { padding:60px 0 60px; }
+  .projects__grid { height:auto; max-width:none; display:flex; flex-direction:column; align-items:center; gap:56px; padding:0 24px; }
+  .proj { position:static; transform:none; width:auto; height:auto; max-width:150px; max-height:150px; }
+  .proj img { width:auto; height:auto; max-width:150px; max-height:150px; object-fit:contain; }
+  .proj--4 { max-width:210px; max-height:210px; }
+  .proj--4 img { max-width:210px; max-height:210px; }
+  .proj--5 { max-width:110px; max-height:110px; }
+  .proj--5 img { max-width:110px; max-height:110px; }
+
+  /* about: one column */
+  .about { padding:60px 24px 60px; }
+  .about__inner { flex-direction:column; align-items:center; gap:32px; }
+  .about__image-wrap { width:min(170px, 37.5vw); }
+  .about__text { padding-top:0; }
+
+  /* collab: flower peeks from bottom-right corner */
+  .collab { padding:60px 24px 200px; }
+  .collab__img-side { width:200px; right:-45px; bottom:-10px; }
+
+  /* lightbox */
+  .lightbox__arrow { padding:0 8px; font-size:26px; }
+  .lightbox__img { max-width:76vw; max-height:75vh; }
+  .lightbox__close { top:14px; right:16px; }
+}
