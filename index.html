@@ -107,6 +107,8 @@
     lbClose.onclick = closeLightbox;
     lbPrev.onclick  = function(){ showImg(curIdx-1); };
     lbNext.onclick  = function(){ showImg(curIdx+1); };
+    lbImg.style.cursor = "pointer";
+    lbImg.onclick = function(e){ e.stopPropagation(); showImg(curIdx+1); };
     lightbox.addEventListener("click", function(e){ if(e.target===lightbox) closeLightbox(); });
     document.addEventListener("keydown", function(e){
       if(lightbox.style.display!=="flex") return;
