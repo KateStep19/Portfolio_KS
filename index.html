@@ -124,57 +124,21 @@
       if(e.key==="ArrowRight") showImg(curIdx+1);
     });
 
-    var cover = document.getElementById("cursor-cover");
-    function isMobile(){ return window.matchMedia("(max-width: 700px)").matches; }
-
-    document.addEventListener("mousemove", function(e){
-      if (isMobile()) return;
-      cover.style.width = "220px";
-      cover.style.height = "auto";
-      cover.style.left=(e.clientX+20)+"px";
-      cover.style.top=(e.clientY-20)+"px";
-    });
-
-    var armedProj = null;
-
     Object.keys(galleries).forEach(function(cls){
-      var proj = document.querySelector("."+cls);
-
-      proj.addEventListener("mouseenter",function(){
-        if (isMobile()) return;
-        cover.src=proj.dataset.cover; cover.style.width="220px"; cover.style.height="auto"; cover.style.display="block";
-      });
-      proj.addEventListener("mouseleave",function(){
-        if (isMobile()) return;
-        cover.style.display="none";
-      });
-
-      proj.addEventListener("click", function(e){
+      document.querySelector("."+cls).addEventListener("click", function(e){
         e.preventDefault();
-        if (isMobile()) {
-          if (armedProj !== proj) {
-            var r = proj.getBoundingClientRect();
-            cover.src = proj.dataset.cover;
-            cover.style.left = r.left + "px";
-            cover.style.top = r.top + "px";
-            cover.style.width = r.width + "px";
-            cover.style.height = "auto";
-            cover.style.display = "block";
-            armedProj = proj;
-            return;
-          }
-          cover.style.display = "none";
-          armedProj = null;
-        }
         openLightbox(galleries[cls], 0, cls);
       });
     });
 
-    document.addEventListener("click", function(e){
-      if (isMobile() && armedProj && !e.target.closest(".proj[data-cover]")) {
-        cover.style.display = "none";
-        armedProj = null;
-      }
+    var cover = document.getElementById("cursor-cover");
+    document.addEventListener("mousemove", function(e){
+      cover.style.left=(e.clientX+20)+"px";
+      cover.style.top=(e.clientY-20)+"px";
+    });
+    document.querySelectorAll(".proj[data-cover]").forEach(function(proj){
+      proj.addEventListener("mouseenter",function(){ cover.src=proj.dataset.cover; cover.style.display="block"; });
+      proj.addEventListener("mouseleave",function(){ cover.style.display="none"; });
     });
 
     var isNight=false;

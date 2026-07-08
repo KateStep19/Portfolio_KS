@@ -74,6 +74,9 @@ body.night-mode .collab__input::placeholder,body.night-mode .collab__textarea::p
 
 /* ======= MOBILE ======= */
 @media (max-width: 700px) {
+  /* no hover/tap-preview on touch screens: never show the cursor-following cover */
+  #cursor-cover { display:none !important; }
+
   .daynight-toggle { gap:20px !important; padding:10px 0 4px !important; }
   .daynight-btn { height:36px !important; }
   /* nav: same left/vertical layout as desktop, just smaller */
