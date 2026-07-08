@@ -107,6 +107,7 @@
       lbImg.src = curImages[curIdx];
       lightbox.className = "lightbox" + (cls==="proj--3"?" lightbox--blue":cls==="proj--4"?" lightbox--dark":cls==="proj--6"?" lightbox--pink":"");
       lightbox.style.display = "flex";
+      images.forEach(function(src){ new Image().src = src; });
     }
     function closeLightbox() { lightbox.style.display = "none"; }
     function showImg(i) { curIdx=(i+curImages.length)%curImages.length; lbImg.src=curImages[curIdx]; }
@@ -133,6 +134,7 @@
 
     var cover = document.getElementById("cursor-cover");
     document.addEventListener("mousemove", function(e){
+      if (lightbox.style.display === "flex") return;
       cover.style.left=(e.clientX+20)+"px";
       cover.style.top=(e.clientY-20)+"px";
     });
